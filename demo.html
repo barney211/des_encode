@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="./js/crypto-js.js" ></script>
+    <style>
+    </style>
+</head>
+<body>
+<script>
+   window.onload=function () {
+       let key = 'ehrb@201';
+       let ss = {"accessType":"outorgan","userId":"outer","organPwd":"123456"};
+       ss=JSON.stringify(ss);
+       var afterEncrypt = CryptoJS.DES.encrypt(ss, CryptoJS.enc.Utf8.parse(key), {
+           mode: CryptoJS.mode.ECB,
+           padding: CryptoJS.pad.Pkcs7
+       }).toString()
+       console.log(afterEncrypt) //将经过编码的数据打出来
+   }
+</script>
+</body>
+</html>
